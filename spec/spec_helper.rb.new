@@ -1,0 +1,3 @@
+puts 'spec_helper loaded'
+
+require_relative '../lib/rwords/main'

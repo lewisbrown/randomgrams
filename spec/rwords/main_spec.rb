@@ -2,6 +2,7 @@ srand 1234
 
 require 'factorial'
 require 'rwords'
+require 'dict'
 
 class Integer
   include Factorial
@@ -25,7 +26,7 @@ module Main
     it "should generate random letters" do
       rw.generate
       expect(rw.random_chars.length).to eq N
-      expect(rw.random_chars.join).to match /[a-z]+/
+      expect(rw.random_chars.join).to match(/[a-z]+/)
     end
 
     it "should compute permutations" do
@@ -57,7 +58,12 @@ module Main
     end
 
     it "should produce an array of anagrams found in the dictionary" do
-      
+      rw.random_chars = RANDOM_STRING.split(//)
+      rw.permute
+      rw.find_words
+      expect(rw.words.length).to eq 4
+      puts rw.words
+      #bindings.pry
     end
 
   end

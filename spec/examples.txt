@@ -1,13 +1,13 @@
 example_id                      | status | run_time        |
 ------------------------------- | ------ | --------------- |
 ./spec/factorial_spec.rb[1:1]   | passed | 0.00039 seconds |
-./spec/rwords/main_spec.rb[1:1] | passed | 0.13425 seconds |
-./spec/rwords/main_spec.rb[1:2] | passed | 0.16447 seconds |
-./spec/rwords/main_spec.rb[1:3] | passed | 0.10552 seconds |
-./spec/rwords/main_spec.rb[1:4] | passed | 0.11695 seconds |
-./spec/rwords/main_spec.rb[1:5] | passed | 0.08624 seconds |
-./spec/rwords/main_spec.rb[1:6] | passed | 0.10489 seconds |
-./spec/rwords/main_spec.rb[1:7] | passed | 0.00007 seconds |
-./spec/rwords/main_spec.rb[2:1] | passed | 0.10759 seconds |
-./spec/rwords/main_spec.rb[2:2] | passed | 0.11686 seconds |
-./spec/rwords/main_spec.rb[2:3] | passed | 0.12462 seconds |
+./spec/rwords/main_spec.rb[1:1] | passed | 0.08788 seconds |
+./spec/rwords/main_spec.rb[1:2] | passed | 0.10604 seconds |
+./spec/rwords/main_spec.rb[1:3] | passed | 0.10239 seconds |
+./spec/rwords/main_spec.rb[1:4] | passed | 0.12751 seconds |
+./spec/rwords/main_spec.rb[1:5] | passed | 0.14012 seconds |
+./spec/rwords/main_spec.rb[1:6] | passed | 0.12293 seconds |
+./spec/rwords/main_spec.rb[1:7] | passed | 0.10871 seconds |
+./spec/rwords/main_spec.rb[2:1] | passed | 0.10959 seconds |
+./spec/rwords/main_spec.rb[2:2] | passed | 0.10417 seconds |
+./spec/rwords/main_spec.rb[2:3] | passed | 0.0823 seconds  |

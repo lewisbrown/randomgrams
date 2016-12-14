@@ -1,26 +1,5 @@
 module Main
-
-  class Dict
-    attr_accessor :words
-
-    def initialize(file)
-      @words = Hash.new(false)
-      File.readlines(file).map(&:chomp).each do |word|
-        words[word.downcase] = true if word[-2] != ?' 
-      end
-    end
-
-    def lookup(word)
-      words[word]
-    end
-
-    def add(word)
-      words[word] = true
-    end
-  end
-
-  # Randomgrams
-  class Rwords
+  class Randomgrams
 
     attr_reader   :length
     attr_accessor :random_chars
@@ -32,8 +11,8 @@ module Main
       @length   = length
       @random_chars = []
       @anagrams = []
-      @dict    = Dict.new("/usr/share/dict/words")
       @words   = []
+      @dict    = Dict.new("/usr/share/dict/words")
     end
 
     def generate()

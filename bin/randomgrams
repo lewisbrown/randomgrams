@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'randomgrams'
+
+puts 'rwords is running'
+puts "$* is #{$*}"
+puts "ARGV is #{ARGV}"
+puts "length ARGV = #{ARGV.length}"
+
+anagrams = Randomgrams.new(5)
+

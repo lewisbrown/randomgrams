@@ -1,8 +1,9 @@
 srand 1234
 
 require 'factorial'
-require 'rwords'
+require 'randomgrams'
 require 'dict'
+require 'random_string'
 
 class Integer
   include Factorial
@@ -11,13 +12,13 @@ end
 module Main
 
   # create random string of chars
-  RSpec.describe "Rwords" do
+  RSpec.describe "Randomgrams" do
 
     RANDOM_STRING = 'life'
     N = RANDOM_STRING.length
     N_FACT = N.fact
 
-    let(:rw) { Rwords.new(N) }
+    let(:rw) { Randomgrams.new(N) }
 
     it "should be initialized by a number" do
       expect(rw.length).to eq N

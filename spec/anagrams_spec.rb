@@ -1,5 +1,5 @@
 require "randomgrams/anagrams"
-require "randomgrams/factorial"
+require "factorial"
 
 class Integer
   include Factorial

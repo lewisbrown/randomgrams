@@ -1,4 +1,4 @@
-require 'randomgrams/factorial'
+require 'factorial'
 
 RSpec.describe "Factorial" do
 

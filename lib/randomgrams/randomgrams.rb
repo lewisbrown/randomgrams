@@ -1,6 +1,6 @@
-module Main
-  class Randomgrams
+module Randomgrams
 
+  class Main
     attr_reader   :length
     attr_accessor :random_chars
     attr_accessor :anagrams

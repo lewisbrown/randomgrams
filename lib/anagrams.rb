@@ -1,33 +1,30 @@
-class Anagrams
+require 'dict'
 
-  attr_accessor :anagrams
-  attr_accessor :dict
-  attr_reader   :words
+class Anagrams
+  @dict = Dict.new("/usr/share/dict/words")
 
   def self.for(word)
-    @dict    = Dict.new("/usr/share/dict/words")
+    #@dict    = Dict.new("/usr/share/dict/words")
     find_words(permute(word))
-  end
-
-  def initialize
-    @dict    = Dict.new("/usr/share/dict/words")
   end
 
   def for(word)
-    find_words(permute(word))
+    Anagrams.find_words(Anagrams.permute(word))
   end
 
   private
 
-  def permute(word)
-    word.permutation.collect{ |letters| letters.join }.uniq
+  def self.permute(word)
+    w = word.split(//)
+    w.permutation.collect{ |letters| letters.join }.uniq
   end
 
-  def find_words(anagrams)
+  def self.find_words(anagrams)
+    @words = []
     anagrams.each do |anagram|
-      words << anagram if dict.lookup anagram
+      @words << anagram if @dict.lookup anagram
     end
-    anagrams
+    @words
   end
 
 end

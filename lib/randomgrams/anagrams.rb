@@ -1,10 +1,9 @@
-require 'dict'
+require 'randomgrams/dict'
 
 class Anagrams
   @dict = Dict.new("/usr/share/dict/words")
 
   def self.for(word)
-    #@dict    = Dict.new("/usr/share/dict/words")
     find_words(permute(word))
   end
 

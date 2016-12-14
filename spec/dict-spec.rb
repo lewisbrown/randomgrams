@@ -1,5 +1,4 @@
-require 'rspec'
-require 'dict'
+require 'randomgrams/dict'
 
 RSpec.describe "Dict" do
 

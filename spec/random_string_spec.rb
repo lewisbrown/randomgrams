@@ -1,9 +1,8 @@
-require 'rspec'
-require 'random_string'
+require 'randomgrams/random_string'
 
 RSpec.describe "RandomString" do
   N = 5
-  
+
   let(:str) { RandomString.generate(N) }
 
   it "should be a string of specified length" do

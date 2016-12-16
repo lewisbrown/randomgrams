@@ -4,7 +4,7 @@ class Dict
   def initialize(file)
     @words = Hash.new(false)
     File.readlines(file).map(&:chomp).each do |word|
-      words[word.downcase] = true if word[-2] != '?'
+      words[word.downcase] = true
     end
   end
 

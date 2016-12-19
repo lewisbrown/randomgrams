@@ -15,7 +15,7 @@ module Randomgrams
       s = RandomString.generate(n)
       puts "your string was: " + s
 
-      a = Anagrams::for(s)
+      a = Anagrams.new.for(s)
       puts "your anagrams are: " + a.join(", ")
     end
 

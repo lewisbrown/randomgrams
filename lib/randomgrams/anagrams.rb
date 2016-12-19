@@ -1,55 +1,31 @@
 require 'randomgrams/dict'
+DEFAULT_DICT = "/usr/share/dict/words"
 
 class Anagrams
-  @dict = Dict.new("/usr/share/dict/words")
+  attr_reader :dict
 
-  def self.for(word)
-    find_words(permutations_of_combinations(combinations(word)))
+  def initialize(dict=DEFAULT_DICT)
+    @dict = Dict.new(dict)
   end
 
   def for(word)
-    Anagrams.find_words(Anagrams.permutations_of_combinations(Anagrams.combinations(word)))
+    find_words(all_permutations(word))
   end
 
   private
 
-  def self.permutation(word)
-    w = word.split('')
-    w.permutation.map { |letters| letters.join } #.uniq
+  def permutation(word, k=word.length)
+    word.chars.permutation(k).map(&:join)
   end
 
-  def self.combination(word, k_choices)
-    w = word.split('')
-    w.combination(k_choices).map { |letters| letters.join } #.uniq
-  end
-
-  def self.combinations(word)
+  def all_permutations(word)
     n = word.length
-    combinations = []
 
-    (1..n).each do |k|
-      combinations << Anagrams.combination(word, k)
-    end
-
-    combinations.flatten
+    (1..n).each.collect { |k| word.chars.permutation(k).map(&:join) }.flatten
   end
 
-  def self.permutations_of_combinations(combinations)
-    permutations = []
-
-    combinations.each do |c|
-      permutations << Anagrams.permutation(c) #.uniq
-    end
-
-    permutations.flatten
-  end
-
-  def self.find_words(anagrams)
-    @words = []
-    anagrams.each do |anagram|
-      @words << anagram if @dict.lookup anagram
-    end
-    @words
+  def find_words(anagrams)
+    anagrams.select { |a| @dict.found? a }
   end
 
 end
